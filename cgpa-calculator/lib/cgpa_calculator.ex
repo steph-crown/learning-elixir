@@ -1,20 +1,23 @@
 defmodule CgpaCalculator do
-  # course_list = []
+  @course_list []
   # [course_list]
 
-  # def add_course(name, score, unit) do
-  #   course_list = [course_list | %{name: name, score: score, unit: unit}]
-  # end
+  def add_course(name, score, unit) do
+    ori = @course_list
+    IO.inspect(ori)
+    @course_list = ori ++ [{"name", "score", "unit"}]
+  end
 
-  # def get_course(key, value) do
-  # end
+  def get_course() do
+    @course_list
+  end
 
   # def remove_course(key, value) do
   # end
 
-  # def get_course_list() do
-  #   course_list
-  # end
+  def get_course_list() do
+    @course_list
+  end
 
   # Gets the grade of a score
   def get_score_grade(score) do
@@ -29,7 +32,7 @@ defmodule CgpaCalculator do
     end
   end
 
-  def get_grade_point({name, score, unit}) do
+  def get_grade_point({score, unit}) do
     cond do
       get_score_grade(score) === -1 or unit < 1 ->
         -1
