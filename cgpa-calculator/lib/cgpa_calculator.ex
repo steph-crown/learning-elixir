@@ -16,6 +16,7 @@ defmodule CgpaCalculator do
   #   course_list
   # end
 
+  # Gets the grade of a score
   def get_score_grade(score) do
     cond do
       0 < score and score < 40 -> 0
@@ -28,8 +29,18 @@ defmodule CgpaCalculator do
     end
   end
 
-  # def get_grade_point(%{name, score, unit}) do
-  # end
+  def get_grade_point({name, score, unit}) do
+    cond do
+      get_score_grade(score) === -1 or unit < 1 ->
+        -1
+
+      get_score_grade(score) >= 0 ->
+        get_score_grade(score) * unit
+
+      true ->
+        -1
+    end
+  end
 
   # def get_total_score() do
   # end
