@@ -5,7 +5,7 @@
 -   Has a free variable to store the list of course names and scores and units
 -   Has a function to add a course name and score to array of scores and units
 -   Has a function to remove the first occurence a course by passing the key to match and the value e.g `remove("name", "Ade")`
--   Has a function to remove the first occurence a course by passing the key to match and the value e.g `remove("name", "Ade")`
+-   Has a function to get the first occurence a course by passing the key to match and the value e.g `get_course("name", "Ade")`
 -   Has a function to get the list of course names and scores and units
 -   Has a function to get the total scores from the list
 -   Has a function that returns the grade of a particular score using the following definition:
