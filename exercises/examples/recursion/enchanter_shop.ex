@@ -13,8 +13,12 @@ defmodule EnchanterShop do
     []
   end
 
-  def enchant([%{title: title, price: price, magic: magic} | tail]) do
-    [%{title: title <> " magic", price: price * 3, magic: magic} | enchant(tail)]
+  def enchant([head = %{magic: true} | tail]) do
+    [head | enchant(tail)]
+  end
+
+  def enchant([%{title: title, price: price, magic: _} | tail]) do
+    [%{title: title <> " magic", price: price * 3, magic: true} | enchant(tail)]
   end
 
   def main do
