@@ -18,6 +18,6 @@ defmodule EnchanterShop do
   end
 
   def main do
-    IO.puts(enchant(test_data()))
+    enchant(test_data())
   end
 end
